@@ -54,12 +54,7 @@ int main() {
           double angle = std::stod(j[1]["steering_angle"].get<std::string>());
           double steer_value;
           double throttle = 0.7;
-          /*
-           * TODO: Calcuate steering value here, remember the steering value is
-           * [-1, 1].
-           * NOTE: Feel free to play around with the throttle and speed. Maybe
-           * use another PID controller to control the speed!
-           */
+
           pid_steer.UpdateError(cte);
           steer_value = max(-1., min(1., pid_steer.TotalError()));
 
